@@ -26,10 +26,10 @@ Resolve hostnames to IPs in a cross-platform friendly manner using:
 [System.Net.Dns]::GetHostAddresses($t)
 ```
 
-**Step 3:**
+**Step 3:**  
 De-duplicate the resulting IP list and loop through each target.
 
-**Step 4:**
+**Step 4:**  
 Query ARIN's REST API for WHOIS data.
 Failures are retried up to 3 times before displaying an error to the user and logging to $fails to display at the end of the full loop.
 
