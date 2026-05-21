@@ -34,14 +34,16 @@ Query ARIN's REST API for WHOIS data.
 Failures are retried up to 3 times before displaying an error to the user and logging to $fails to display at the end of the full loop.
 
 # Usage
+```powershell
 whodis google.com,1.1.1.1,9.9.9.9,bing.com
 whodis google.com
 whodis 1.1.1.1
 whodis @("google.com","1.1.1.1")
+```
 
 # One-Liner Setup! (PowerShell 7)
 This adds the function to your $profile so its always loaded in your shell. I recommend running this on all accounts you want to use it on.
 
-```
+```powershell
 $t = iwr -UseBasicParsing https://raw.githubusercontent.com/BrodyGitsIT/whodis/main/whodis.ps1; "`r`n`r`n$($t.Content)" | Out-File -Append -Encoding utf8NoBOM $PROFILE; . $PROFILE
 ```
